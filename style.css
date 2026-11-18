@@ -1,0 +1,188 @@
+:root {
+    --orange: #f4a04a;
+    --white: #ffffff;
+    --line: 3px solid #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    color: var(--white);
+    font-family: "Open Sans", Arial, sans-serif;
+    letter-spacing: 0.04em;
+    /* Nền đen giả vân đá */
+    background-color: #0b0b0b;
+    background-image:
+        linear-gradient(118deg, transparent 47%, rgba(255,255,255,.10) 48%, transparent 49.5%),
+        linear-gradient(32deg, transparent 62%, rgba(255,255,255,.05) 62.6%, transparent 63.6%),
+        radial-gradient(circle at 20% 15%, #1d1d1d 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, #1a1a1a 0%, transparent 45%);
+    background-attachment: fixed;
+}
+
+.cv {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+h1, h2, h3 {
+    font-family: "Montserrat", Arial, sans-serif;
+    margin: 0;
+}
+
+.orange { color: var(--orange); }
+
+/* ===== Tiêu đề ===== */
+header { text-align: center; margin-bottom: 40px; }
+header h1 { font-size: 52px; font-weight: 800; letter-spacing: .06em; }
+header h1 span { font-weight: 500; }
+header p {
+    margin: 12px 0 0;
+    font-size: 20px;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+}
+
+/* ===== Khung bo tròn ===== */
+.box {
+    border: var(--line);
+    border-radius: 36px;
+    padding: 30px 40px;
+    margin-bottom: 28px;
+}
+.box h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+.box h2 span { font-weight: 500; }
+.center { text-align: center; }
+
+ul { margin: 0; padding-left: 22px; }
+li { margin-bottom: 6px; line-height: 1.5; }
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--orange); }
+
+/* ===== Hàng 1: Học thuật | Ảnh | Liên hệ ===== */
+.row-top {
+    display: grid;
+    grid-template-columns: 1fr 260px 1fr;
+    align-items: center;
+    margin-bottom: 28px;
+}
+.row-top .box { margin-bottom: 0; min-height: 360px; }
+.row-top .left  { margin-right: -60px; padding-right: 80px; }
+.row-top .right { margin-left: -60px;  padding-left: 90px; }
+
+.photo {
+    position: relative;
+    z-index: 2;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 6px solid var(--white);
+    background: #333 url("https://lekhang0610.github.io/lekhang/me.jpg") center / cover no-repeat;
+}
+
+.edu-item { margin-bottom: 14px; }
+.edu-item h3 { font-size: 18px; }
+.edu-item .school {
+    color: var(--orange);
+    font-weight: 600;
+    font-size: 15px;
+    margin: 4px 0 2px;
+}
+.edu-item p { margin: 0; font-size: 14px; }
+
+.contact p { margin: 0 0 18px; font-size: 15px; }
+
+/* ===== Giới thiệu ===== */
+.about p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* ===== Hàng 3: Mạng xã hội | Laptop | Chứng chỉ ===== */
+.row-mid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    align-items: center;
+    margin-bottom: 28px;
+}
+.row-mid .box { margin-bottom: 0; height: 100%; padding: 30px 24px; }
+.row-mid .box h2 { font-size: 24px; white-space: nowrap; }
+
+.socials {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.socials a { display: block; }
+.socials { gap: 12px; }
+.socials svg { width: 46px; height: 46px; fill: var(--orange); }
+.socials span { display: block; margin-top: 8px; font-size: 13px; }
+
+.laptop svg { width: 100%; height: auto; }
+
+.cert-name { margin: 0 0 6px; font-size: 16px; }
+.bar {
+    height: 6px;
+    background: var(--white);
+    border-radius: 3px;
+    margin-bottom: 18px;
+}
+.bar div {
+    height: 100%;
+    background: var(--orange);
+    border-radius: 3px;
+}
+
+/* ===== Kĩ năng ===== */
+.skills {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+}
+.skills svg {
+    width: 54px;
+    height: 54px;
+    stroke: var(--white);
+    fill: none;
+    stroke-width: 1.6;
+}
+.skills span { display: block; margin-top: 8px; font-size: 16px; }
+
+/* ===== Kinh nghiệm + Người tham chiếu ===== */
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 10px;
+}
+.two-col h3 { font-size: 17px; margin-bottom: 6px; }
+.two-col .sub {
+    color: var(--orange);
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+/* ===== Màn hình nhỏ ===== */
+@media (max-width: 820px) {
+    .cv { padding: 40px 18px; }
+    header h1 { font-size: 36px; }
+    header p { font-size: 14px; letter-spacing: .25em; }
+    .row-top, .row-mid, .two-col { grid-template-columns: 1fr; }
+    .row-top { gap: 24px; justify-items: center; }
+    .row-top .box { width: 100%; min-height: 0; }
+    .row-top .left, .row-top .right { margin: 0; padding: 30px; }
+    .photo { order: -1; width: 200px; height: 200px; }
+    .laptop { display: none; }
+}
